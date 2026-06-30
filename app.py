@@ -1,19 +1,19 @@
 from flask import Flask 
-from flask_wtf import FlaskForm
+from auth import auth
+
+
 
 app=Flask(__name__)
 
-@app.route('/')
-def hello():
-    return 'Hello world'
+app.config['SECRET_KEY'] = 'dev-key-placeholder'
+app.register_blueprint(auth,url_prefix='/')
 
 
-@app.route('/hello')
-def helloee():
-    return 'this is the hello page'
 
-if __name__=='__main__': 
-    app.run(host='0.0.0.0',debug=True)
+if __name__=='__main__':
+    app.run('0.0.0.0',debug=True)
+
+
 
 
 
