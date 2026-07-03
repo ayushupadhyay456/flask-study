@@ -3,7 +3,7 @@ from app import db
 from flask_login import UserMixin  #login using flask
 from sqlalchemy.sql import func
 
-class Note(db.model):
+class Note(db.Model):
     id=db.Column(db.Integer,primaryKey=True)
     data=db.Column(db.String(10000))
     date=db.Column(db.DateTime(timezone=True),default=func.now())
