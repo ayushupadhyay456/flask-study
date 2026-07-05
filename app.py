@@ -47,6 +47,3 @@ def create_database(app):
             db.create_all()
         print('Created Database!')
 
-if __name__ == '__main__':
-    app = create_app()
-    app.run(host='0.0.0.0', debug=True)

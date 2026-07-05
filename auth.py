@@ -30,10 +30,11 @@ def login():
 
 
 @auth.route('/logout')
-@login_required
+@login_required  #user must be log in to log out
 def logout():
     logout_user()
-    return redirect(url_for('auth.login'))
+    return redirect(url_for('auth.login')) # the auth.loin login means the function login in auth.py
+
 
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
